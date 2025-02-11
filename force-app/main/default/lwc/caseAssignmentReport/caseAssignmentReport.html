@@ -1,0 +1,23 @@
+<!--
+  @description       : 
+  @author            : KurtChoi
+  @group             : 
+  @last modified on  : 02-12-2025
+  @last modified by  : KurtChoi
+-->
+<template>
+    <lightning-card  title="Case Assignment Report">
+        <template if:true={caseList}>
+            <lightning-datatable
+                data={caseList}
+                columns={columns}
+                key-field="Id"
+                hide-checkbox-column
+                >
+            </lightning-datatable>
+        </template>
+        <template if:true={error}>
+            <p>Error:{error.body.message}</p>
+        </template>
+    </lightning-card>
+</template>
